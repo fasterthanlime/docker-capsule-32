@@ -11,6 +11,15 @@ RUN apt-get install --quiet --yes autoconf automake bzip2 libtool nasm perl pkg-
 RUN \
         SRC=/usr && \
         FFMPEG_VERSION=3.2.3 && \
+        X264_VERSION=20160826-2245-stable && \
+        DIR=$(mktemp -d) && cd ${DIR} && \
+## x264 http://www.videolan.org/developers/x264.html
+        curl -sL https://ftp.videolan.org/pub/videolan/x264/snapshots/x264-snapshot-${X264_VERSION}.tar.bz2 | \
+        tar -jx --strip-components=1 && \
+        ./configure --prefix="${SRC}" --bindir="${SRC}/bin" --enable-pic --enable-shared --disable-cli && \
+        make && \
+        make install && \
+        rm -rf ${DIR} && \
         DIR=$(mktemp -d) && cd ${DIR} && \
 # ffmpeg https://ffmpeg.org/
         curl -sLO https://ffmpeg.org/releases/ffmpeg-${FFMPEG_VERSION}.tar.gz && \
