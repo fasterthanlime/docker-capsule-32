@@ -31,7 +31,7 @@ RUN \
         --enable-postproc \
         --enable-nonfree \
         --disable-debug \
-        --enable-small \
+        --enable-small && \
         make && \
         make install && \
         make distclean && \
