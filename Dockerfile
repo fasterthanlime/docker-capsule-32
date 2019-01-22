@@ -96,5 +96,5 @@ RUN \
         make distclean && \
         rm -rf ${DIR} 
 
-ENV PATH = "${PATH}:/usr/local/go/bin"
+ENV PATH "${PATH}:/usr/local/go/bin"
 
