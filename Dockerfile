@@ -1,6 +1,6 @@
 FROM 32bit/debian:latest
 
-RUN apt-get install debian-keyring debian-archive-keyring --quiet --yes
+RUN apt-get install debian-archive-keyring --quiet --yes
 RUN uname -a && apt-get update --quiet && apt-get install --quiet --yes netselect-apt
 RUN cd /etc/apt && netselect-apt && apt-get update
 RUN apt-get dist-upgrade --quiet --yes
