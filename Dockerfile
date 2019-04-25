@@ -1,4 +1,4 @@
-FROM 32bit/debian:latest
+FROM i386/debian:jessie-slim
 
 RUN apt-get install debian-archive-keyring --quiet --yes
 RUN uname -a && apt-get update --quiet && apt-get install --quiet --yes netselect-apt
