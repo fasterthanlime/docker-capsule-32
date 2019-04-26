@@ -17,8 +17,14 @@ RUN apt-get install --quiet --yes \
 RUN curl https://ftp.osuosl.org/pub/blfs/conglomeration/nasm/nasm-2.14.02.tar.xz | tar xJ && \
     cd nasm-2.14.02 && ./configure --host=i686-pc-linux-gnu && make -j all install
 
+# butler deps
+
 RUN \
     curl -sL https://dl.google.com/go/go1.12.4.linux-386.tar.gz | \
     tar -zx -C /usr/local
 ENV PATH "${PATH}:/usr/local/go/bin"
+
+RUN apt-get install --quiet --yes zip p7zip-full
+
+RUN apt-get install --quiet --yes zip p7zip-full
 
