@@ -20,7 +20,7 @@ RUN curl https://ftp.osuosl.org/pub/blfs/conglomeration/nasm/nasm-2.14.02.tar.xz
 # butler deps
 
 RUN \
-    curl -sL https://dl.google.com/go/go1.13.3.linux-386.tar.gz | \
+    curl -sL https://dl.google.com/go/go1.13.4.linux-386.tar.gz | \
     tar -zx -C /usr/local
 ENV PATH "${PATH}:/usr/local/go/bin"
 
